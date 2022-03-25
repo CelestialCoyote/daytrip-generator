@@ -6,9 +6,9 @@ const DESTINATION_LOCATIONS = [
     'London',
     'Amsterdam',
     'Madrid',
-    'Brussels',
+    'Stockholm',
     'Paris',
-    'Berlin',
+    'Prague',
     'Rome'
 ];
 
@@ -36,7 +36,8 @@ const ENTERTAINMENT_CHOICES = [
     'the Opera',
     'a Nightclub',
     'the Ballet',
-    'Gambling'
+    'Gambling',
+    'a Sporting Event'
 ];
 
 // Array to hold user choices. Default values.
@@ -78,9 +79,24 @@ function selectOptions(option, anArray) {
     return selection;
 }
 
-// Store choices accepted by user.
-userChoices[0] = selectOptions('destination', DESTINATION_LOCATIONS);
-userChoices[1] = selectOptions('dining option', DINING_OPTIONS);
-userChoices[2] = selectOptions('mode of transportaion', TRANSPORTATION_OPTIONS);
-userChoices[3] = selectOptions('entertainment choice', ENTERTAINMENT_CHOICES);
-console.log(userChoices);
+// Get choices from user by user.
+function getUserChoices() {
+    userChoices[0] = selectOptions('destination', DESTINATION_LOCATIONS);
+    userChoices[1] = selectOptions('dining option', DINING_OPTIONS);
+    userChoices[2] = selectOptions('mode of transportaion', TRANSPORTATION_OPTIONS);
+    userChoices[3] = selectOptions('entertainment choice', ENTERTAINMENT_CHOICES);
+
+    alert('All options now selected.');
+}
+
+function displayChoices() {
+    console.log('Here is the completed Day Trip itineraty you have chosen.');
+    console.log(`Your chosen destination is: ${userChoices[0]}`);
+    console.log(`Your chosen dining option is: ${userChoices[1]}`);
+    console.log(`Your chosen mode of transportation is: ${userChoices[2]}`);
+    console.log(`Your chosen form of entertainment is: ${userChoices[3]}`);
+    console.log('Enjoy your Day Trip.');
+}
+
+getUserChoices();
+displayChoices();
