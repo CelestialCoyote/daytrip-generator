@@ -98,5 +98,5 @@ function displayChoices() {
     console.log('Enjoy your Day Trip.');
 }
 
-getUserChoices();
-displayChoices();
+//getUserChoices();
+//displayChoices();
