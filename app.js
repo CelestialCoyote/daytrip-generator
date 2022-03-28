@@ -137,5 +137,14 @@ for(let i = 0; i < buttons.length; i++) {
     };
 }
 
+document.getElementById('doneButton').onclick = function() {
+    console.log('all done');
+    document.getElementById('confirmedChoices').textContent =
+        `Your confirmed choices: Destination - 
+        ${userChoices[0]}, 
+        Transportation - ${userChoices[2]}, 
+        Entertainment - ${userChoices[3]}`;
+}
+
 
 getInitialChoices();
