@@ -6,22 +6,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type="text/javascript" src="app.js"></script>
-
     <title>DayTripGenerator</title>
 </head>
 
 <body>
-    <h1>Day Trip Generator</h1>
+    <div id="appTitle">
+        <h1>Day Trip Generator</h1>
+    </div>
+    
+    <div>
+        <h3>Choose Destination:</h3>
+        <h3 id="destinationSelection"></h3>
+        <button id="destinationButton" class="optionButton">Choose Again</button>
+    </div>
 
-    <h3>Choose Destination:</h3>
-    <button id="destinationButton">Choose</button>
-    <h3>Choose Dining Option:</h3>
-    <button id="diningButton">Choose</button>
-    <h3>Choose Transportaton Mode:</h3>
-    <button id="transportationButton">Choose</button>
-    <h3>Choose Entertainment Option:</h3>
-    <button id="entertainmentButton">Choose</button>
+    <div>
+        <h3>Choose Dining Option:</h3>
+        <h3 id="diningSelection"></h3>
+        <button id="diningButton" class="optionButton">Choose Again</button>
+    </div>
+    
+    <div>
+        <h3>Choose Transportaton Mode:</h3>
+        <h3 id="transportationSelection"></h3>
+        <button id="transportationButton" class="optionButton">Choose Again</button>
+    </div>
+    
+    <div>
+        <h3>Choose Entertainment Option:</h3>
+        <h3 id="entertainmentSelection"></h3>
+        <button id="entertainmentButton" class="optionButton">Choose Again</button>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>

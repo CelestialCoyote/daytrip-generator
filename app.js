@@ -51,16 +51,11 @@ let userChoices = [
 
 // Functions.
 
-// Random generator function.
-function getRandomInt(maxNumber) {
-    return Math.floor(Math.random() * maxNumber);
-}
-
 // Get randomly chosen value from Day Trip choice arrays.
 function getChoice(anArray) {
-    //let choice = getRandomInt(anArray.length);
-    return getRandomInt(anArray.length);
-    //console.log(`Randomly selected option: ${anArray[choice]}`);
+    let random = Math.floor(Math.random() * anArray.length);
+
+    return random;
 }
 
 // Allow user to see random choice and accept or choose again.
@@ -100,3 +95,28 @@ function displayChoices() {
 
 //getUserChoices();
 //displayChoices();
+
+
+// Code for HTML functionality.
+
+function getInitialChoices() {
+    let firstDestination = DESTINATION_LOCATIONS[getChoice(DESTINATION_LOCATIONS)];
+    let firstDining = DINING_OPTIONS[getChoice(DINING_OPTIONS)];
+    let firstTransportation = TRANSPORTATION_OPTIONS[getChoice(TRANSPORTATION_OPTIONS)];
+    let firstEntertainment = ENTERTAINMENT_CHOICES[getChoice(ENTERTAINMENT_CHOICES)];
+
+    document.getElementById('destinationSelection').textContent = firstDestination;
+    document.getElementById('diningSelection').textContent = firstDining;
+    document.getElementById('transportationSelection').textContent = firstTransportation;
+    document.getElementById('entertainmentSelection').textContent = firstEntertainment;
+}
+
+let buttons = document.getElementsByClassName('optionButton');
+
+for(let i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = function() {
+        console.log(this.id);
+    };
+}
+
+getInitialChoices();
