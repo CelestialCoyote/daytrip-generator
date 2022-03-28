@@ -99,24 +99,43 @@ function displayChoices() {
 
 // Code for HTML functionality.
 
+// Populate initial choices.
 function getInitialChoices() {
-    let firstDestination = DESTINATION_LOCATIONS[getChoice(DESTINATION_LOCATIONS)];
-    let firstDining = DINING_OPTIONS[getChoice(DINING_OPTIONS)];
-    let firstTransportation = TRANSPORTATION_OPTIONS[getChoice(TRANSPORTATION_OPTIONS)];
-    let firstEntertainment = ENTERTAINMENT_CHOICES[getChoice(ENTERTAINMENT_CHOICES)];
+    userChoices[0] = DESTINATION_LOCATIONS[getChoice(DESTINATION_LOCATIONS)];
+    userChoices[1]= DINING_OPTIONS[getChoice(DINING_OPTIONS)];
+    userChoices[2] = TRANSPORTATION_OPTIONS[getChoice(TRANSPORTATION_OPTIONS)];
+    userChoices[3] = ENTERTAINMENT_CHOICES[getChoice(ENTERTAINMENT_CHOICES)];
 
-    document.getElementById('destinationSelection').textContent = firstDestination;
-    document.getElementById('diningSelection').textContent = firstDining;
-    document.getElementById('transportationSelection').textContent = firstTransportation;
-    document.getElementById('entertainmentSelection').textContent = firstEntertainment;
+    document.getElementById('destinationSelection').textContent = userChoices[0];
+    document.getElementById('diningSelection').textContent = userChoices[1];
+    document.getElementById('transportationSelection').textContent = userChoices[2];
+    document.getElementById('entertainmentSelection').textContent = userChoices[3];
 }
 
+// Let user change individual options.
 let buttons = document.getElementsByClassName('optionButton');
 
 for(let i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function() {
-        console.log(this.id);
+        //console.log(this.id);
+        
+        if(this.id === 'destinationButton') {
+            userChoices[0] = DESTINATION_LOCATIONS[getChoice(DESTINATION_LOCATIONS)];
+            document.getElementById('destinationSelection').textContent = userChoices[0];
+        } else if(this.id === 'diningButton') {
+            userChoices[1]= DINING_OPTIONS[getChoice(DINING_OPTIONS)];
+            document.getElementById('diningSelection').textContent = userChoices[1];
+        } else if(this.id === 'transportationButton') {
+            userChoices[2] = TRANSPORTATION_OPTIONS[getChoice(TRANSPORTATION_OPTIONS)];
+            document.getElementById('transportationSelection').textContent = userChoices[2];
+        } else if(this.id === 'entertainmentButton') {
+            userChoices[3] = ENTERTAINMENT_CHOICES[getChoice(ENTERTAINMENT_CHOICES)];
+            document.getElementById('entertainmentSelection').textContent = userChoices[3];
+        } else {
+            console.log('Error, choice not allowed');
+        }
     };
 }
+
 
 getInitialChoices();
